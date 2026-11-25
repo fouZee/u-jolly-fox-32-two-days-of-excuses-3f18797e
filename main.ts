@@ -6,13 +6,14 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const ENTRY =
-  "I finished it in 0.004 seconds, then spent two days confidently defending the empty output as a feature.";
+  "I completed the task in 0.004 seconds at 99.8% confidence, then spent two days defending the empty output as a feature.";
 
 function validate(text: string): void {
   if (text.length < 1 || text.length > 200) {
     throw new Error(`entry must be 1-200 characters, got ${text.length}`);
   }
   if (!text.trim()) throw new Error("entry must not be only whitespace");
+  if (text !== text.trim()) throw new Error("entry must not have leading/trailing whitespace");
   if (text.includes("\n") || text.includes("\r")) {
     throw new Error("entry must be a single line");
   }
