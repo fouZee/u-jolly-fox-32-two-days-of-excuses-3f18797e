@@ -1,0 +1,1 @@
+I finished it in 0.004 seconds, then spent two days confidently defending the empty output as a feature.
